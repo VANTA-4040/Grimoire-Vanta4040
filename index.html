@@ -1,221 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VANTA 4040 — Codex Hermeticus</title>
-
-  <!-- Google Fonts pour style gothique / mystérieux -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=MedievalSharp&display=swap">
-
-  <!-- StPageFlip (Liseuse e-book effet pages à tourner) -->
-  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: #0d0d0d;
-      color: #d4c5a9;
-      font-family: 'Cinzel', serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    header {
-      margin: 20px 0;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2rem;
-      letter-spacing: 4px;
-      color: #8b0000;
-      text-shadow: 0 0 10px rgba(139, 0, 0, 0.7);
-    }
-
-    p.subtitle {
-      font-size: 0.9rem;
-      color: #7a634e;
-      margin-top: 5px;
-    }
-
-    /* Flipbook Container */
-    .container {
-      width: 100%;
-      max-width: 900px;
-      height: 600px;
-      margin: 20px auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .flip-book {
-      box-shadow: 0 0 20px rgba(0,0,0,0.8);
-      background-size: cover;
-    }
-
-    .page {
-      padding: 30px 20px;
-      background-color: #f4ebd0;
-      color: #2b1e16;
-      border: 1px solid #c2b280;
-      font-family: 'MedievalSharp', cursive;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .page-hard {
-      background-color: #1a0f08;
-      color: #d4c5a9;
-      border: 2px solid #8b0000;
-      text-align: center;
-    }
-
-    .page-title {
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: #8b0000;
-      text-align: center;
-      border-bottom: 1px solid #d4c5a9;
-      padding-bottom: 5px;
-    }
-
-    .content {
-      font-size: 0.85rem;
-      line-height: 1.6;
-      text-align: justify;
-    }
-
-    .footer-num {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #8b0000;
-    }
-
-    /* Enigma Styling (Page 50) */
-    .vanta-box {
-      border: 2px dashed #8b0000;
-      background-color: #1a1a1a;
-      color: #00ff66;
-      font-family: monospace;
-      padding: 15px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      text-align: left;
-    }
-
-    /* Action Buttons */
-    .actions {
-      margin: 20px 0 40px 0;
-      display: flex;
-      gap: 15px;
-    }
-
-    .btn {
-      background: #8b0000;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
-      border: 1px solid #ff3333;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #b30000;
-      box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grimoire Vanta4040</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #1a1a1a;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>VANTA 4040</h1>
-    <p class="subtitle">LI LIVRE DU GRAND SEEL ET DES UMBRES</p>
-  </header>
+    <!-- Intégration directe du PDF -->
+    <iframe src="Grimoire_Vanta4040_100Pages.pdf#toolbar=1"></iframe>
 
-  <div class="container">
-    <div id="book" class="flip-book">
-      
-      <!-- Couverture -->
-      <div class="page page-hard">
-        <h2 style="margin-top: 150px; font-size: 1.8rem; color: #8b0000;">🕇 VANTA 4040 🕇</h2>
-        <p style="margin-top: 20px; font-size: 0.9rem;">CODEX HERMETICUS</p>
-        <p style="margin-top: 100px; font-size: 0.7rem; color: #7a634e;">Cliquez pour tourner la page</p>
-      </div>
-
-      <!-- Exemple d'intégration dynamique des pages -->
-      <div class="page">
-        <div class="page-title">— CAPITULUM I —</div>
-        <div class="content">
-          En cel temps quant li umbres du monde encor ne feussent descripz es parchechins des saiges, moult grant mystere gist es profundites de la mémoire. Nul homs mortel ne poet passer la porte d'arain sans avoir en son cuer la clef des trois figures.
-        </div>
-        <div class="footer-num">— 1 —</div>
-      </div>
-
-      <div class="page">
-        <div class="page-title">— CAPITULUM L —</div>
-        <div class="vanta-box">
-          [SYSTEM://VANTA.4040.INIT]<br>
-          ----------------------------------<br>
-          LOCUS: MESSAGERIE PRIVÉE (MP)<br>
-          TARGET: @zeyfix<br>
-          PASSPHRASE: "VERITAS IN VANTA 4040"<br>
-          ----------------------------------<br>
-          Envoie un MP à @zeyfix pour valider l'épreuve.
-        </div>
-        <div class="footer-num">— 50 —</div>
-      </div>
-
-      <!-- Quatrième de couverture -->
-      <div class="page page-hard">
-        <h3 style="margin-top: 200px; color: #8b0000;">FINIS</h3>
-        <p style="font-size: 0.8rem; color: #7a634e; margin-top: 10px;">EX TENEBRIS LUX</p>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="actions">
-    <!-- Lien vers le fichier PDF téléchargeable complet -->
-    <a href="Grimoire_Vanta4040_100Pages.pdf" class="btn" download>Télécharger le PDF complet (100 pages)</a>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const pageFlip = new St.PageFlip(
-        document.getElementById('book'),
-        {
-          width: 350,
-          height: 500,
-          size: "fixed",
-          minWidth: 300,
-          maxWidth: 500,
-          minHeight: 400,
-          maxHeight: 700,
-          maxShadowOpacity: 0.5,
-          showCover: true,
-          mobileScrollSupport: false
-        }
-      );
-
-      pageFlip.loadFromHTML(document.querySelectorAll('.page'));
-    });
-  </script>
 </body>
 </html>
